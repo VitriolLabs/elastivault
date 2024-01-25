@@ -10,6 +10,7 @@
   <br>
   ElastiVault(s) allow users to dynamically execute <b>any</b> on-chain action, without needing to rely on some pre-deployed logic smart contract(s).
   <br>
+  <br>
   <a href="https://badge.fury.io/js/@vitriollabs%2Felastivault"><img src="https://badge.fury.io/js/@vitriollabs%2Felastivault.svg" alt="npm version" height="18"></a>
   <br>
 </div>
