@@ -21,19 +21,19 @@ task('callOwnableElastiVault', 'Runs some code against a specified ElastiVault')
 
         const {bytecode} = await getVMBytecodeSig(account, scriptArtifact)
 
-        const sageInstance: OwnableElastiVault = OwnableElastiVault__factory.connect(safe, account)
+        const vaultInstance: OwnableElastiVault = OwnableElastiVault__factory.connect(safe, account)
 
         let responseData;
 
         if (call){
-            responseData = await sageInstance.emulate.staticCall(bytecode)
+            responseData = await vaultInstance.emulate.staticCall(bytecode)
 
             const scriptResult = decodeFunctionResult(scriptArtifact, responseData)
 
             console.log("scriptResult: ", scriptResult)
 
         } else {
-            const txResp = await sageInstance.emulate(bytecode)
+            const txResp = await vaultInstance.emulate(bytecode)
 
             const contReceipt = await txResp.wait()
 
